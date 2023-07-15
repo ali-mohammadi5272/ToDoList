@@ -1,0 +1,102 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+}
+.container{
+    width: 600px;
+}
+.container .header{
+    background-color: #f69517a8;
+    padding: 15px 40px 30px;
+    color: white;
+    text-align: center;
+}
+.container .header h2{
+    margin: 10px;
+}
+/* style the input */
+input{
+    width: 75%;
+    float: left;
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px;
+}
+/* style the "Add" button */
+.addBtn{
+    width: 25%;
+    float: left;
+    border: none;
+    padding: 10px;
+    background: #d9d9d9;
+    color: #555;
+    font-size: 16px;
+    cursor: pointer;
+    transform: 0.3s;
+}
+.addBtn:hover{
+    background-color: #bbb;
+}
+/* clear floats after the header */
+.container .header::after{
+    content: "";
+    display: table;
+    clear: both;
+}
+.container .taskList{
+    max-height: 300px;
+    overflow-y: auto;
+}
+.taskList{
+    transition: all 2s;
+}
+.taskList li{
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: all 0.5s;
+    /* make the list items unselectable */
+    user-select: none;
+}
+.taskList li:hover{
+    background-color: rgb(205, 204, 204);
+}
+.closeBtn{
+    display: none;
+    position: absolute;
+    right: 15px;
+}
+ul li:hover .closeBtn{
+    display: inline-block;
+}
+ul li .closeBtn i:hover{
+    color: #ec1d1d;
+}
+.taskList li.done{
+    background-color: #888;
+    color: #fff;
+    text-decoration: line-through;
+}
+.taskList li.done::before{
+    content: "";
+    height: 16px;
+    width: 8px;
+    position: absolute;
+    left: 15px;
+    top: 8px;
+    border-color: #fff;
+    border-width: 0px 2px 2px 0px;
+    border-style: solid;
+    transform: rotateZ(45deg);
+}
